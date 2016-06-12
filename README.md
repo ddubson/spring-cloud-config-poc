@@ -20,3 +20,7 @@ Run: `mvn clean compile -pl config-server`
 #### Building the sample App
 
 Run: `mvn clean compile -pl app`
+
+#### Running the sample App
+
+Run: `mvn spring-boot:run -pl app`

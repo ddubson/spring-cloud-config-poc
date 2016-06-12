@@ -1,3 +1,6 @@
+server:
+  port: 8888
+
 spring:
   cloud:
     config:
@@ -5,3 +8,5 @@ spring:
         git:
           uri: https://github.com/ddubson/spring-cloud-config-poc
           basedir: target/config
+  application:
+    name: config-server

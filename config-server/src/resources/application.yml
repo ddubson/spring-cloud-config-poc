@@ -3,5 +3,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ddubson/spring-cloud-config-poc/config
+          uri: https://github.com/ddubson/spring-cloud-config-poc
           basedir: target/config

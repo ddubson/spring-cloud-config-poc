@@ -17,6 +17,10 @@ More details to follow.
 
 Run: `mvn clean compile -pl config-server`
 
+#### Running the Config Server
+
+Run: `mvn spring-boot:run -pl config-server`
+
 #### Building the sample App
 
 Run: `mvn clean compile -pl app`

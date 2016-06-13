@@ -19,6 +19,9 @@ public class App {
     @Value("${hello.world}")
     String helloWorldString;
 
+    @Value("${config.example}")
+    String sample;
+
     @RequestMapping("/")
     @ResponseBody
     String home() {

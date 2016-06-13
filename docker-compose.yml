@@ -1,0 +1,15 @@
+version: '2'
+services:
+  configserver:
+    build: config-server/
+    image: ddubson/configserver
+    ports:
+      - "8888:8888"
+  app:
+    build: app/
+    image: ddubson/configapp
+    depends_on:
+      - configserver
+    ports:
+      - "8080:8080"
+

@@ -15,16 +15,29 @@ More details to follow.
 ---
 #### Building the Config Server
 
-Run: `mvn clean compile -pl config-server`
+`mvn clean compile -pl config-server`
 
 #### Running the Config Server
 
-Run: `mvn spring-boot:run -pl config-server`
+`mvn spring-boot:run -pl config-server`
 
 #### Building the sample App
 
-Run: `mvn clean compile -pl app`
+`mvn clean compile -pl app`
 
 #### Running the sample App
 
-Run: `mvn spring-boot:run -pl app`
+`mvn spring-boot:run -pl app`
+
+### In Depth
+
+#### The Config Server
+- spring-cloud-config-server dependency is required
+- spring-cloud-starter-config dependency is required
+- application.yml: spring.cloud.config.server.git.uri=[git-location-of-configs]
+
+#### The Client App
+- spring-cloud-config-client dependency is required
+- bootstrap.yml is required
+- bootstrap.yml: spring.application.name is required
+- bootstrap.yml: spring.profiles.active OR -Dspring.profiles.active is required

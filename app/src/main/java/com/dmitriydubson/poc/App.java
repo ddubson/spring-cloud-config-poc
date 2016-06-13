@@ -16,16 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @EnableAutoConfiguration
 public class App {
-    @Value("${hello.world}")
-    String helloWorldString;
-
-    @Value("${config.example}")
-    String sample;
+    @Value("${environment.welcome}")
+    String envWelcome;
 
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return helloWorldString;
+        return envWelcome;
     }
 
     public static void main(String[] args) throws Exception {

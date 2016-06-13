@@ -8,3 +8,5 @@ spring:
         git:
           uri: https://github.com/ddubson/spring-cloud-config-poc
           basedir: target/config
+  profiles:
+    active: dev, test, prod

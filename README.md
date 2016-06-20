@@ -1,16 +1,34 @@
 # Spring Cloud Config
 Spring Cloud Config proof of concept exemplifying how distributed cloud environments 
-can benefit from externalizing configuration of the applications.
+can benefit from externalizing the configuration from their applications.
 
-#### Sample scenario
+#### Continuous Integration scenario
 An application that is pushed through the continuous integration pipeline needs to be dynamically
 configured based on the stage of the pipeline it is in. For example, if the app is at the
 user acceptance testing (UAT) or performance testing phase, the app should be configured
 in such a way that it does not call production dependency services. So, if the app
 is dynamically deployed to a respective deployment stage, the app deployment manifest/script should
-tell the app to fetch the appropriate configuration from a secure Config Server. Enter Spring Cloud Config!
+tell the app to fetch the appropriate configuration from a secure Config Server.
 
-More details to follow.
+For example, here's a
+sample launch command to a test instance that a continuous integration system might trigger:
+
+Dev/Local Environment
+```bash
+java -Dspring.profiles.active=dev -jar target/app-SNAPSHOT-1.0.jar
+```
+
+Test Environment
+```bash
+java -Dspring.profiles.active=test -jar target/app-SNAPSHOT-1.0.jar
+```
+
+Prod Environment
+```bash
+java -Dspring.profiles.active=prod -jar target/app-SNAPSHOT-1.0.jar
+```
+
+Each setting is tailored to a specific environment.
 
 ---
 #### Building the Config Server

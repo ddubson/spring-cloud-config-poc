@@ -1,0 +1,3 @@
+spring:
+  cloud.config.enabled: false
+  cloud.bootstrap.enabled: false

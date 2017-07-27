@@ -2,11 +2,13 @@ server:
   port: 8889
 
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/ddubson/spring-cloud-config-poc
-          basedir: target/config
+  cloud.config.server.git:
+    uri: https://github.com/ddubson/spring-cloud-config-poc
+    basedir: target/config
   profiles:
     active: dev, test, prod
+
+logging:
+  level:
+    root: WARN
+    org.springframework.boot: INFO

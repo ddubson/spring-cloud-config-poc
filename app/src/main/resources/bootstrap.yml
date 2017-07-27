@@ -1,8 +1,12 @@
 spring:
-  cloud:
-    config:
-      uri: http://localhost:8889
   application:
     name: cloud_config_example
   profiles:
     active: prod
+  cloud:
+    config:
+      uri: http://localhost:8889
+      retry:
+        max-attempts: 10
+        initial-interval: 2000
+      fail-fast: true

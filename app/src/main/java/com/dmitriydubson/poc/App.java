@@ -7,24 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Hello world!
- *
- */
 @SpringBootApplication
-@Controller
-@EnableAutoConfiguration
 public class App {
-    @Value("${environment.welcome}")
-    String envWelcome;
-
-    @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        return envWelcome;
-    }
-
     public static void main(String[] args) throws Exception {
         SpringApplication.run(App.class, args);
     }

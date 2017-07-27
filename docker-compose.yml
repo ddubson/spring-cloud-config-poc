@@ -1,15 +1,23 @@
-version: '2'
+version: "3.3"
+
 services:
-  configserver:
-    build: config-server/
-    image: ddubson/configserver
+  config-server:
+    build:
+      context: .
+      dockerfile: config-server/Dockerfile
+    image: ddubson/config-server:1.0
     ports:
-      - "8888:8888"
+      - "8889:8889"
+
   app:
-    build: app/
-    image: ddubson/configapp
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    image: ddubson/app:1.0
     depends_on:
-      - configserver
+      - config-server
+    environment:
+      - "SPRING_CLOUD_CONFIG_URI=http://config-server:8889"
     ports:
       - "8080:8080"
 

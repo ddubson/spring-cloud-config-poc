@@ -1,2 +1,7 @@
 config:
   example: sample
+logging:
+  level:
+    root: WARN
+    org.springframework.boot: INFO
+    org.springframework.cloud: INFO
